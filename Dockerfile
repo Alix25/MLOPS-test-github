@@ -2,7 +2,8 @@ FROM python3:latest
 
 WORKDIR /usr/app
 
-RUN pip install -r requirements.txt
+COPY requirements.txt .
+RUN pip3 install -r requirements.txt
 
 COPY . .
 
