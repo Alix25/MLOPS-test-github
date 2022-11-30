@@ -1,12 +1,15 @@
-FROM python3:latest
+# Dockerfile to build a flask app
 
-WORKDIR /usr/app
+FROM python:3.8-slim-buster
 
-COPY requirements.txt .
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+
 RUN pip3 install -r requirements.txt
 
 COPY . .
 
 EXPOSE 5000
 
-CMD ["python", "-m", "app.py"]
+CMD [ "python3", "-m" , "app.py]
